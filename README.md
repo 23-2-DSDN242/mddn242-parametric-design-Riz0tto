@@ -10,3 +10,6 @@ The three parameters per letter:
   * `size` : radius of the second circle
   * `offsetx` : x offset of the second circle relative to the first one
   * `offsety` : y offset of the second circle relative to the first one
+
+
+My initial idea is to use the colours cyan, magenta and yellow, as overlapping squares with some transparency. This should create the colours red, green or blue in the overlaps. I'm not sure how much I'll need to manipulate the shapes in order for letters to be legible with this approach. The shapes may need to be more complex than squares, or there may need to be more than three.
