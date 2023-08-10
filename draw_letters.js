@@ -1,12 +1,12 @@
 /* these are optional special variables which will change the system */
-var systemBackgroundColor = "#caf0f8";
-var systemLineColor = "#000090";
-var systemBoxColor = "#00c800";
+var systemBackgroundColor = "#FFFFFF";
+var systemLineColor = "#000000";
+var systemBoxColor = "#FF0000";
 
 /* internal constants */
-const darkBlue  = "#0077b6";
-const lightBlue  = "#90e0ef";
-const strokeColor  = "#03045e";
+const cyan = "#00FFFF";
+const magenta = "#FF00FF";
+const yellow = "#FFFF00";
 
 /*
  * Draw the letter given the letterData
@@ -16,20 +16,25 @@ const strokeColor  = "#03045e";
  * from (0,0) to (100, 200)
  */
 function drawLetter(letterData) {
-  // color/stroke setup
-  stroke(strokeColor);
-  strokeWeight(4);
 
-  // determine parameters for second circle
-  let size2 = letterData["size"];
-  let pos2x = 50  + letterData["offsetx"];
-  let pos2y = 150 + letterData["offsety"];
+  blendMode(MULTIPLY);
+  strokeWeight(0);
+  rectMode(RADIUS);
 
-  // draw two circles
-  fill(darkBlue);
-  ellipse(50, 150, 75, 75);
-  fill(lightBlue);
-  ellipse(pos2x, pos2y, size2, size2);
+  // determine parameters for cyan square
+  let sizeC = letterData["sizeC"];
+  let rotC = letterData["rotC"];
+  let posCx = 50  + letterData["offsetCx"];
+  let posCy = 150 + letterData["offsetCy"];
+
+  // draw three squares
+  fill(cyan);
+  rect(50, 80, 20);
+  fill(magenta);
+  rect(80, 100, 30);
+  fill(yellow);
+  rect(50, 40, 40);
+
 }
 
 function interpolate_letter(percent, oldObj, newObj) {

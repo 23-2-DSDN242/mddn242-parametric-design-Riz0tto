@@ -36,7 +36,7 @@ const letterC = {
   "offsety2": 0
 }
 
-const backgroundColor  = "#caf0f8";
+const backgroundColor  = "#FFFFFF";
 const strokeColor      = "#03045e";
 
 const darkBlue  = "#0077b6";
@@ -51,6 +51,7 @@ function setup () {
   colorMode(HSB, 100);
   stroke(strokeColor);
   strokeWeight(0);
+  blendMode(MULTIPLY);
 
   // with no animation, redrawing the screen is not necessary
   noLoop();
@@ -79,11 +80,11 @@ function drawLetter(posx, posy, letterData) {
   let pos3y = pos2y + letterData["offsety2"];
 
   // draw three squares
-  fill(83, 100, 100, 50);
+  fill(83, 100, 100, 75);
   rect(posx, posy, 150, 50);
-  fill(50, 100, 100, 50);
+  fill(50, 100, 100, 75);
   rect(pos2x, pos2y, size2, size2);
-  fill(17, 100, 100, 50);
+  fill(17, 100, 100, 75);
   rect(pos3x, pos3y, size2, size2);
 }
 

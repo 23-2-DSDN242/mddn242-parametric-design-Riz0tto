@@ -13,3 +13,5 @@ The three parameters per letter:
 
 
 My initial idea is to use the colours cyan, magenta and yellow, as overlapping squares with some transparency. This should create the colours red, green or blue in the overlaps. I'm not sure how much I'll need to manipulate the shapes in order for letters to be legible with this approach. The shapes may need to be more complex than squares, or there may need to be more than three.
+
+I found that I can use blendMode(MULTIPLY) to create the effect I want with the overlapping colours, making them create RGB in the overlaps rather than averaging the colour.
