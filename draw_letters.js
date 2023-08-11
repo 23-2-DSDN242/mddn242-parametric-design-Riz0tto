@@ -19,22 +19,52 @@ function drawLetter(letterData) {
 
   blendMode(MULTIPLY);
   strokeWeight(0);
-  rectMode(RADIUS);
 
   // determine parameters for cyan square
   let sizeC = letterData["sizeC"];
   let rotC = letterData["rotC"];
   let posCx = 50  + letterData["offsetCx"];
-  let posCy = 150 + letterData["offsetCy"];
+  let posCy = 100 + letterData["offsetCy"];
+
+  // determine parameters for magenta square
+  let sizeM = letterData["sizeM"];
+  let rotM = letterData["rotM"];
+  let posMx = 50  + letterData["offsetMx"];
+  let posMy = 100 + letterData["offsetMy"];
+
+  // determine parameters for yellow square
+  let sizeY = letterData["sizeY"];
+  let rotY = letterData["rotY"];
+  let posYx = 50  + letterData["offsetYx"];
+  let posYy = 100 + letterData["offsetYy"];
 
   // draw three squares
+  rectMode(RADIUS); // simplifies rect drawing, since they will all be squares and not rectangles
+  angleMode(DEGREES);
+  
   fill(cyan);
-  rect(50, 80, 20);
-  fill(magenta);
-  rect(80, 100, 30);
-  fill(yellow);
-  rect(50, 40, 40);
+  push();
+  translate(posCx, posCy);
+  rotate(rotC);
+  rect(0, 0, sizeC);
+  pop();
 
+  fill(magenta);
+  push();
+  translate(posMx, posMy);
+  rotate(rotM);
+  rect(0, 0, sizeM);
+  pop();
+
+  fill(yellow);
+  push();
+  translate(posYx, posYy);
+  rotate(rotY);
+  rect(0, 0, sizeY);
+  pop();
+
+  rectMode(CORNER); // resets rect mode so the bounding boxes are drawn correctly
+  angleMode(RADIANS);
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
