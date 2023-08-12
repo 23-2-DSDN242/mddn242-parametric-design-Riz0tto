@@ -86,43 +86,88 @@ const alphabet = {
   },
   "F": {
     "sizeC": 20,
-    "rotC": 0,
-    "offsetCx": 10,
-    "offsetCy": 0,
-    "sizeM": 30,
+    "rotC": 45,
+    "offsetCx": -20,
+    "offsetCy": 10,
+    "sizeM": 40,
     "rotM": 0,
     "offsetMx": 0,
-    "offsetMy": -10,
+    "offsetMy": 0,
+    "sizeY": 30,
+    "rotY": 0,
+    "offsetYx": 10,
+    "offsetYy": 10
+  },
+  "G": {
+    "sizeC": 35,
+    "rotC": 0,
+    "offsetCx": 0,
+    "offsetCy": 0,
+    "sizeM": 25,
+    "rotM": 0,
+    "offsetMx": 10,
+    "offsetMy": 0,
+    "sizeY": 20,
+    "rotY": 0,
+    "offsetYx": 30,
+    "offsetYy": 20
+  },
+  "H": {
+    "sizeC": 40,
+    "rotC": 0,
+    "offsetCx": 0,
+    "offsetCy": 0,
+    "sizeM": 25,
+    "rotM": 0,
+    "offsetMx": 0,
+    "offsetMy": 30,
     "sizeY": 25,
     "rotY": 0,
-    "offsetYx": 5,
+    "offsetYx": 0,
+    "offsetYy": -30
+  },
+  "I": {
+    "sizeC": 22,
+    "rotC": 0,
+    "offsetCx": -30,
+    "offsetCy": 0,
+    "sizeM": 22,
+    "rotM": 0,
+    "offsetMx": 30,
+    "offsetMy": 0,
+    "sizeY": 40,
+    "rotY": 0,
+    "offsetYx": 0,
     "offsetYy": 0
   },
-  // "G": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "H": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "I": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "J": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "K": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
+  "J": {
+    "sizeC": 22,
+    "rotC": 0,
+    "offsetCx": -30,
+    "offsetCy": 10,
+    "sizeM": 40,
+    "rotM": 0,
+    "offsetMx": 0,
+    "offsetMy": 0,
+    "sizeY": 25,
+    "rotY": 0,
+    "offsetYx": 30,
+    "offsetYy": 15
+  },
+  "K": {
+    "sizeC": 35,
+    "rotC": 0,
+    "offsetCx": -10,
+    "offsetCy": 0,
+    "sizeM": 25,
+    "rotM": 45,
+    "offsetMx": 25,
+    "offsetMy": 0,
+    "sizeY": 35,
+    "rotY": 0,
+    "offsetYx": 10,
+    "offsetYy": 0
+  },
   // "L": {
   //   "size": 50,
   //   "offsetx": 15,
