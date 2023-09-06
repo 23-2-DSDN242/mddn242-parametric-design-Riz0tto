@@ -25,18 +25,21 @@ function drawLetter(letterData) {
   let rotC = letterData["rotC"];
   let posCx = 50  + letterData["offsetCx"];
   let posCy = 100 + letterData["offsetCy"];
+  let roundC = letterData["roundC"];
 
   // determine parameters for magenta square
   let sizeM = letterData["sizeM"];
   let rotM = letterData["rotM"];
   let posMx = 50  + letterData["offsetMx"];
   let posMy = 100 + letterData["offsetMy"];
+  let roundM = letterData["roundM"];
 
   // determine parameters for yellow square
   let sizeY = letterData["sizeY"];
   let rotY = letterData["rotY"];
   let posYx = 50  + letterData["offsetYx"];
   let posYy = 100 + letterData["offsetYy"];
+  let roundY = letterData["roundY"];
 
   // draw three squares
   rectMode(RADIUS); // simplifies rect drawing, since they will all be squares and not rectangles
@@ -46,21 +49,21 @@ function drawLetter(letterData) {
   push();
   translate(posCx, posCy);
   rotate(rotC);
-  rect(0, 0, sizeC);
+  rect(0, 0, sizeC, sizeC, roundC);
   pop();
 
   fill(magenta);
   push();
   translate(posMx, posMy);
   rotate(rotM);
-  rect(0, 0, sizeM);
+  rect(0, 0, sizeM, sizeM, roundM);
   pop();
 
   fill(yellow);
   push();
   translate(posYx, posYy);
   rotate(rotY);
-  rect(0, 0, sizeY);
+  rect(0, 0, sizeY, sizeY, roundY);
   pop();
 
   rectMode(CORNER); // resets rect mode so the bounding boxes are drawn correctly
