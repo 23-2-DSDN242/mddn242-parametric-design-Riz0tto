@@ -49,21 +49,24 @@ function drawLetter(letterData) {
   push();
   translate(posCx, posCy);
   rotate(rotC);
-  rect(0, 0, sizeC, sizeC, roundC);
+  scale(sizeC);
+  rect(0, 0, 1, 1, roundC/100);
   pop();
 
   fill(magenta);
   push();
   translate(posMx, posMy);
   rotate(rotM);
-  rect(0, 0, sizeM, sizeM, roundM);
+  scale(sizeM);
+  rect(0, 0, 1, 1, roundM/100);
   pop();
 
   fill(yellow);
   push();
   translate(posYx, posYy);
   rotate(rotY);
-  rect(0, 0, sizeY, sizeY, roundY);
+  scale(sizeY);
+  rect(0, 0, 1, 1, roundY/100);
   pop();
 
   rectMode(CORNER); // resets rect mode so the bounding boxes are drawn correctly
@@ -72,9 +75,21 @@ function drawLetter(letterData) {
 
 function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
-  new_letter["size"]    = map(percent, 0, 100, oldObj["size"], newObj["size"]);
-  new_letter["offsetx"] = map(percent, 0, 100, oldObj["offsetx"], newObj["offsetx"]);
-  new_letter["offsety"] = map(percent, 0, 100, oldObj["offsety"], newObj["offsety"]);
+  new_letter["sizeC"]    = map(percent, 0, 100, oldObj["sizeC"], newObj["sizeC"]);
+  new_letter["rotC"]    = map(percent, 0, 90, oldObj["rotC"], newObj["rotC"]);
+  new_letter["offsetCx"] = map(percent, -50,  50, oldObj["offsetCx"], newObj["offsetCx"]);
+  new_letter["offsetCy"] = map(percent, -100, 100, oldObj["offsetCy"], newObj["offsetCy"]);
+  new_letter["roundC"]    = map(percent, 0, 100, oldObj["roundC"], newObj["roundC"]);
+  new_letter["sizeM"]    = map(percent, 0, 100, oldObj["sizeM"], newObj["sizeM"]);
+  new_letter["rotM"]    = map(percent, 0, 90, oldObj["rotM"], newObj["rotM"]);
+  new_letter["offsetMx"] = map(percent, -50,  50, oldObj["offsetMx"], newObj["offsetMx"]);
+  new_letter["offsetMy"] = map(percent, -100, 100, oldObj["offsetMy"], newObj["offsetMy"]);
+  new_letter["roundM"]    = map(percent, 0, 100, oldObj["roundM"], newObj["roundM"]);
+  new_letter["sizeY"]    = map(percent, 0, 100, oldObj["sizeY"], newObj["sizeY"]);
+  new_letter["rotY"]    = map(percent, 0, 90, oldObj["rotY"], newObj["rotY"]);
+  new_letter["offsetYx"] = map(percent, -50,  50, oldObj["offsetYx"], newObj["offsetYx"]);
+  new_letter["offsetYy"] = map(percent, -100, 100, oldObj["offsetYy"], newObj["offsetYy"]);
+  new_letter["roundY"]    = map(percent, 0, 100, oldObj["roundY"], newObj["roundY"]);
   return new_letter;
 }
 

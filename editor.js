@@ -9,17 +9,17 @@ const sliderInfo = [
   ["rotC",       0, 360],
   ["offsetCx",  -50,  50],
   ["offsetCy", -100, 100],
-  ["roundC", 0, 100],
+  ["roundC", 0, 1],
   ["sizeM",       0, 100],
   ["rotM",       0, 360],
   ["offsetMx",  -50,  50],
   ["offsetMy", -100, 100],
-  ["roundM", 0, 100],
+  ["roundM", 0, 1],
   ["sizeY",       0, 100],
   ["rotY",       0, 360],
   ["offsetYx",  -50,  50],
   ["offsetYy", -100, 100],
-  ["roundY", 0, 100]
+  ["roundY", 0, 1]
 ];
 
 // PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.
