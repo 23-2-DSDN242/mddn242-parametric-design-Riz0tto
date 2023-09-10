@@ -129,7 +129,7 @@ const alphabet = {
     "rotM": 0,
     "offsetMx": 10,
     "offsetMy": 0,
-    "roundM": 80,
+    "roundM": 60,
     "sizeY": 15,
     "rotY": 0,
     "offsetYx": 20,
@@ -204,16 +204,40 @@ const alphabet = {
     "offsetYy": 0,
     "roundY": 10
   },
-  // "L": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
-  // "M": {
-  //   "size": 50,
-  //   "offsetx": 15,
-  //   "offsety": 0
-  // },
+  "L": {
+    "sizeC": 40,
+    "rotC": 0,
+    "offsetCx": 0,
+    "offsetCy": 0,
+    "roundC": 10,
+    "sizeM": 30,
+    "rotM": 0,
+    "offsetMx": 10,
+    "offsetMy": -10,
+    "roundM": 10,
+    "sizeY": 10,
+    "rotY": 0,
+    "offsetYx": -20,
+    "offsetYy": -35,
+    "roundY": 100
+  },
+  "M": {
+    "sizeC": 25,
+    "rotC": 45,
+    "offsetCx": 0,
+    "offsetCy": -25,
+    "roundC": 20,
+    "sizeM": 25,
+    "rotM": 0,
+    "offsetMx": -10,
+    "offsetMy": 0,
+    "roundM": 20,
+    "sizeY": 25,
+    "rotY": 0,
+    "offsetYx": 10,
+    "offsetYy": 0,
+    "roundY": 20
+  },
   // "N": {
   //   "size": 50,
   //   "offsetx": 15,
