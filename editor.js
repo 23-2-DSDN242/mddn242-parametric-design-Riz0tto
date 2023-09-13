@@ -19,7 +19,12 @@ const sliderInfo = [
   ["rotY",       0, 360],
   ["offsetYx",  -50,  50],
   ["offsetYy", -100, 100],
-  ["roundY", 0, 100]
+  ["roundY", 0, 100],
+  ["lineBaseX", -50, 50],
+  ["lineBaseY", -100, 100],
+  ["lineLength", -100, 100],
+  ["linesAngle", 0, 360],
+  ["linesRot", 0, 360],
 ];
 
 // PROBABLY DON'T NEED TO EDIT ANYTHING ELSE. STOP HERE.

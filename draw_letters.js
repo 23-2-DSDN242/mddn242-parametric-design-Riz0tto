@@ -41,10 +41,18 @@ function drawLetter(letterData) {
   let posYy = 100 + letterData["offsetYy"];
   let roundY = letterData["roundY"];
 
-  // draw three squares
+  // determine parameters for line
+  let lineBaseX = letterData["lineBaseX"];
+  let lineBaseY = letterData["lineBaseY"];
+  let lineLength = letterData["lineLength"];
+  let linesAngle = letterData["linesAngle"];
+  let linesRot = letterData["linesRot"];
+
+  // draw three squares and a line
   rectMode(RADIUS); // simplifies rect drawing, since they will all be squares and not rectangles
   angleMode(DEGREES);
   
+  // cyan square
   fill(cyan);
   push();
   translate(posCx, posCy);
@@ -53,6 +61,7 @@ function drawLetter(letterData) {
   rect(0, 0, 1, 1, roundC/100);
   pop();
 
+  // magenta square
   fill(magenta);
   push();
   translate(posMx, posMy);
@@ -61,12 +70,29 @@ function drawLetter(letterData) {
   rect(0, 0, 1, 1, roundM/100);
   pop();
 
+  // yellow square
   fill(yellow);
   push();
   translate(posYx, posYy);
   rotate(rotY);
   scale(sizeY);
   rect(0, 0, 1, 1, roundY/100);
+  pop();
+
+  // two connected lines, one rotated (allows the creation of v shape with only 5 parameters)
+  
+  push();
+  strokeWeight(5);
+  stroke(0);
+  translate(50 + lineBaseX, 100 + lineBaseY);
+  rotate(linesRot)
+
+  line(0, 0, lineLength, 0);
+  
+  rotate(linesAngle);
+
+  line(0, 0, lineLength, 0);
+
   pop();
 
   rectMode(CORNER); // resets rect mode so the bounding boxes are drawn correctly
@@ -77,24 +103,29 @@ function interpolate_letter(percent, oldObj, newObj) {
   let new_letter = {};
   new_letter["sizeC"]    = map(percent, 0, 100, oldObj["sizeC"], newObj["sizeC"]);
   new_letter["rotC"]    = map(percent, 0, 90, oldObj["rotC"], newObj["rotC"]);
-  new_letter["offsetCx"] = map(percent, -50,  50, oldObj["offsetCx"], newObj["offsetCx"]);
+  new_letter["offsetCx"] = map(percent, -100,  100, oldObj["offsetCx"], newObj["offsetCx"]);
   new_letter["offsetCy"] = map(percent, -100, 100, oldObj["offsetCy"], newObj["offsetCy"]);
   new_letter["roundC"]    = map(percent, 0, 100, oldObj["roundC"], newObj["roundC"]);
   new_letter["sizeM"]    = map(percent, 0, 100, oldObj["sizeM"], newObj["sizeM"]);
   new_letter["rotM"]    = map(percent, 0, 90, oldObj["rotM"], newObj["rotM"]);
-  new_letter["offsetMx"] = map(percent, -50,  50, oldObj["offsetMx"], newObj["offsetMx"]);
+  new_letter["offsetMx"] = map(percent, -100,  100, oldObj["offsetMx"], newObj["offsetMx"]);
   new_letter["offsetMy"] = map(percent, -100, 100, oldObj["offsetMy"], newObj["offsetMy"]);
   new_letter["roundM"]    = map(percent, 0, 100, oldObj["roundM"], newObj["roundM"]);
   new_letter["sizeY"]    = map(percent, 0, 100, oldObj["sizeY"], newObj["sizeY"]);
   new_letter["rotY"]    = map(percent, 0, 90, oldObj["rotY"], newObj["rotY"]);
-  new_letter["offsetYx"] = map(percent, -50,  50, oldObj["offsetYx"], newObj["offsetYx"]);
+  new_letter["offsetYx"] = map(percent, -100,  100, oldObj["offsetYx"], newObj["offsetYx"]);
   new_letter["offsetYy"] = map(percent, -100, 100, oldObj["offsetYy"], newObj["offsetYy"]);
   new_letter["roundY"]    = map(percent, 0, 100, oldObj["roundY"], newObj["roundY"]);
+  new_letter["lineBaseX"]    = map(percent, 0, 100, oldObj["lineBaseX"], newObj["lineBaseX"]);
+  new_letter["lineBaseY"]    = map(percent, -100, 100, oldObj["lineBaseY"], newObj["lineBaseY"]);
+  new_letter["lineLength"]    = map(percent, -100, 100, oldObj["lineLength"], newObj["lineLength"]);
+  new_letter["linesAngle"]    = map(percent, 0, 90, oldObj["linesAngle"], newObj["linesAngle"]);
+  new_letter["linesRot"]    = map(percent, 0, 90, oldObj["linesRot"], newObj["linesRot"]);
   return new_letter;
 }
 
 var swapWords = [
-  "ABBAABBA",
-  "CAB?CAB?",
-  "BAAAAAAA"
+  "OVERLAPS",
+  "01234567",
+  "ABSTRACT"
 ]
