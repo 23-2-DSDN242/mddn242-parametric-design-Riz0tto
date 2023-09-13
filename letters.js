@@ -813,6 +813,28 @@ const alphabet = {
     "lineLength": 60,
     "linesAngle": 0,
     "linesRot": 135
+  },
+  "?": {
+    "sizeC": 20,
+    "rotC": 45,
+    "offsetCx": -10,
+    "offsetCy": -10,
+    "roundC": 50,
+    "sizeM": 15,
+    "rotM": 45,
+    "offsetMx": 0,
+    "offsetMy": 40,
+    "roundM": 50,
+    "sizeY": 30,
+    "rotY": 45,
+    "offsetYx": 0,
+    "offsetYy": -20,
+    "roundY": 50,
+    "lineBaseX": -10,
+    "lineBaseY": -40,
+    "lineLength": 40,
+    "linesAngle": 90,
+    "linesRot": 45
   }
 
 }
