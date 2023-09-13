@@ -17,8 +17,8 @@ const yellow = "#FFFF00";
  */
 function drawLetter(letterData) {
 
-  blendMode(MULTIPLY);
-  strokeWeight(0);
+  blendMode(MULTIPLY);       // creates the correct overlapping colours for cyan, magenta and yellow
+  let shapeStrokeWeight = 0; // stroke around shapes
 
   // determine parameters for cyan square
   let sizeC = letterData["sizeC"];
@@ -57,7 +57,8 @@ function drawLetter(letterData) {
   push();
   translate(posCx, posCy);
   rotate(rotC);
-  scale(sizeC);
+  scale(sizeC);  
+  strokeWeight(shapeStrokeWeight/sizeC);
   rect(0, 0, 1, 1, roundC/100);
   pop();
 
@@ -67,6 +68,7 @@ function drawLetter(letterData) {
   translate(posMx, posMy);
   rotate(rotM);
   scale(sizeM);
+  strokeWeight(shapeStrokeWeight/sizeM);
   rect(0, 0, 1, 1, roundM/100);
   pop();
 
@@ -76,27 +78,30 @@ function drawLetter(letterData) {
   translate(posYx, posYy);
   rotate(rotY);
   scale(sizeY);
+  strokeWeight(shapeStrokeWeight/sizeY);
   rect(0, 0, 1, 1, roundY/100);
   pop();
 
   // two connected lines, one rotated (allows the creation of v shape with only 5 parameters)
   
   push();
+
   strokeWeight(5);
   stroke(0);
   translate(50 + lineBaseX, 100 + lineBaseY);
   rotate(linesRot)
 
-  line(0, 0, lineLength, 0);
+  line(0, 0, lineLength, 0); // line 1
   
   rotate(linesAngle);
 
-  line(0, 0, lineLength, 0);
+  line(0, 0, lineLength, 0); // line 2, rotated by linesAnlge
 
   pop();
 
-  rectMode(CORNER); // resets rect mode so the bounding boxes are drawn correctly
-  angleMode(RADIANS);
+  strokeWeight(1);    // resets the stroke weight to 1
+  rectMode(CORNER);   // resets rect mode so the bounding boxes are drawn correctly
+  angleMode(RADIANS); // resets angle mode to radians
 }
 
 function interpolate_letter(percent, oldObj, newObj) {
