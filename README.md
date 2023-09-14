@@ -67,4 +67,6 @@ I have implemented my lines into my letters and it makes them much more readable
 
 Finished Product:
 
-My idea for this project was to really use the colours that are created by overlapping the squares to define the letters. Unfortunately the reality was that without more complex shapes it was very difficult to create the diverse range of shapes necessary for every letter. This led me to add corner rounding on the squares as well as a line element. Adding these brought the number of parameters from my original 12, up to 20.
+My idea for this project was to use the colours that are created by overlapping cyan, magenta and yellow squares to build letters. Unfortunately the reality was that without more complex shapes it was very difficult to create the diverse range of shapes necessary for every letter. This led me to add corner rounding on the squares as well as a line element. Adding these brought the number of parameters from my original 12, up to 20. While I would have liked to keep the number of parameters low as challenge, these two additions created a huge number of possibilities and made designing the letters a lot easier.
+
+Overall, I'm very happy with my letters. They're very abstract and inconsistent, but they have a very unique style. The interpolation looks very clean, largely because the transformations of the shapes use simple numbers. In future I would like to experiment with more minimalistic designs, and see how few parameters are needed to create a recognisable alphabet.
