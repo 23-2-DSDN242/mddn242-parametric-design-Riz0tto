@@ -5,6 +5,8 @@
 
 Documentation - Overlaps by Riley Campbell
 
+Information:
+
 My letters are made up of three squares, which can be rounded until they are circular, as well as a a line which can be split into two connected lines with an angle between them.
 
 The twenty parameters per letter, split between each square and the lines:
@@ -32,7 +34,7 @@ The twenty parameters per letter, split between each square and the lines:
   * `linesAngle` : angle between the two lines
   * `linesRot` : rotation of the lines around the base location 
 
-Development:
+Development Notes:
 
 1.
 
@@ -60,4 +62,9 @@ Instead of creating a complex squiggly line, I've decided to set up something mu
 
 7. 
 
-I have implemented my lines into my letters and it makes them much more readable. Using it, I was able to complete the alphabet and all the numbers. In places the lines are required to create the shape at all, like for the numbers 6, 7, and 9.
+I have implemented my lines into my letters and it makes them much more readable. Using the lines, I was able to complete the alphabet and all the numbers. In places the lines are required to create the shape at all, like for the numbers 6, 7, and 9.
+
+
+Finished Product:
+
+My idea for this project was to really use the colours that are created by overlapping the squares to define the letters. Unfortunately the reality was that without more complex shapes it was very difficult to create the diverse range of shapes necessary for every letter. This led me to add corner rounding on the squares as well as a line element. Adding these brought the number of parameters from my original 12, up to 20.
